@@ -39,7 +39,7 @@ class App extends Component {
     });
     return (
       <div>
-        <Navbar className="sticky-top" color="dark" light expand="md">
+        <Navbar className="sticky-top" color="light" light expand="md">
           <NavbarBrand href="/">Props</NavbarBrand>
         </Navbar>
 

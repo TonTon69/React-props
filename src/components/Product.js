@@ -8,6 +8,18 @@ import {
   Button,
 } from "reactstrap";
 class Product extends Component {
+  // Cách 1:
+  onAddToCart = () => {
+    alert("Mua thành công: " + this.props.name + "-" + this.props.price);
+  };
+  constructor(props) {
+    super(props);
+    this.onAddToCart2 = this.onAddToCart.bind(this);
+  }
+  // Cách 2:
+  onAddToCart2() {
+    alert("Mua thành công: " + this.props.name + "-" + this.props.price);
+  }
   render() {
     return (
       <div>
@@ -21,7 +33,12 @@ class Product extends Component {
           <CardBody>
             <CardTitle>{this.props.name}</CardTitle>
             <CardText>{this.props.price} VNĐ</CardText>
-            <Button color="primary">Mua ngay</Button>
+            <Button className="mr-2" color="primary" onClick={this.onAddToCart}>
+              Mua ngay 1
+            </Button>
+            <Button color="primary" onClick={this.onAddToCart2}>
+              Mua ngay 2
+            </Button>
           </CardBody>
         </Card>
       </div>
